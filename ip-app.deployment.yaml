@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ip-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ip-app
+  template:
+    metadata:
+      labels:
+        app: ip-app
+    spec:
+      containers:
+      - name: ip-app
+        image: ipappacr.azurecr.io/ip-app:1.0.2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
