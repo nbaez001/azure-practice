@@ -1,0 +1,31 @@
+apiVersion: 2021-07-01  
+location: eastus2  
+name: acineu2pruebad01  
+properties:  
+  containers:  
+  - name: ip-app 
+    properties:  
+      image: nbaez001/ip-app:1.0.4 
+      resources:  
+        requests:  
+          cpu: 1  
+          memoryInGb: 1.5  
+      ports:  
+      - port: 8080 
+  - name: ip-app-web 
+    properties:  
+      image: nbaez001/ip-app-web:1.0.2 
+      resources:  
+        requests:  
+          cpu: 1  
+          memoryInGb: 1.5  
+      ports:  
+      - port: 80 
+  osType: Linux  
+  ipAddress:  
+    type: Public  
+    ports:   
+    - protocol: tcp 
+      port: 80 
+tags: {env: dev} 
+type: Microsoft.ContainerInstance/containerGroups 
