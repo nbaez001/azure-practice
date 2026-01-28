@@ -1,0 +1,22 @@
+{
+    "assignableScopes": [
+        "/subscriptions/da4ab1cb-4078-47f5-9a9a-61e892269446"
+    ],
+    "description": "Custom reader role with limited permissions",
+    "name": "Custom Besoft Reader",
+    "isCustom": true,
+    "permissions": [
+        {
+            "actions": [
+                "Microsoft.Compute/virtualMachines/read",
+                "Microsoft.Network/networkInterfaces/read",
+                "Microsoft.Resources/subscriptions/resourceGroups/read"
+            ],
+            "condition": null,
+            "conditionVersion": null,
+            "dataActions": [],
+            "notActions": [],
+            "notDataActions": []
+        }
+    ]
+}
