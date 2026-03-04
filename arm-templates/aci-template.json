@@ -1,0 +1,56 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "variables": {},
+    "resources": [
+        {
+            "name": "aci1",
+            "type": "Microsoft.ContainerInstance/containerGroups",
+            "apiVersion": "2019-12-01",
+            "location": "eastus",
+            "properties": {
+                "containers": [
+                    {
+                        "name": "container1",
+                        "properties": {
+                            "image": "docker.io/nbaez001/ip-app:1.0.9",
+                            "ports": [
+                                {
+                                    "port": 80,
+                                    "protocol": "TCP"
+                                }
+                            ],
+                            "resources": {
+                                "requests": {
+                                    "cpu": 1,
+                                    "memoryInGb": 1.5
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "container2",
+                        "properties": {
+                            "image": "docker.io/nbaez001/ip-app:1.0.9-8080",
+                            "ports": [
+                                {
+                                    "port": 8080,
+                                    "protocol": "TCP"
+                                }
+                            ],
+                            "resources": {
+                                "requests": {
+                                    "cpu": 1,
+                                    "memoryInGb": 1.5
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            "osType": "Linux"
+        }
+    ],
+    "outputs": {}
+}
