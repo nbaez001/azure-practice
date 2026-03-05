@@ -7,14 +7,14 @@
         {
             "name": "aci1",
             "type": "Microsoft.ContainerInstance/containerGroups",
-            "apiVersion": "2019-12-01",
-            "location": "eastus",
+            "apiVersion": "2021-07-01",
+            "location": "eastus2",
             "properties": {
                 "containers": [
                     {
-                        "name": "container1",
+                        "name": "ip-app-web",
                         "properties": {
-                            "image": "docker.io/nbaez001/ip-app:1.0.9",
+                            "image": "nbaez001/ip-app-web:1.0.2",
                             "ports": [
                                 {
                                     "port": 80,
@@ -30,9 +30,9 @@
                         }
                     },
                     {
-                        "name": "container2",
+                        "name": "ip-app",
                         "properties": {
-                            "image": "docker.io/nbaez001/ip-app:1.0.9-8080",
+                            "image": "nbaez001/ip-app:1.0.4",
                             "ports": [
                                 {
                                     "port": 8080,
@@ -47,9 +47,18 @@
                             }
                         }
                     }
-                ]
-            },
-            "osType": "Linux"
+                ],
+                "osType": "Linux",
+                "ipAddress": {
+                    "type": "Public",
+                    "ports": [
+                        {
+                            "protocol": "TCP",
+                            "port": 80
+                        }
+                    ]
+                }
+            }
         }
     ],
     "outputs": {}
