@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "defaultValue": "West US",
+            "type": "string",
+            "allowedValues": [
+                "Australia East",
+                "North Europe",
+                "UK South",
+                "West US"
+            ],
+            "metadata": {
+                "description": "Location for all resources."
+            }
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Compute/availabilitySets",
+            "apiVersion": "2020-06-01",
+            "name": "availabilitySet1",
+            "location": "West Europe",
+            "properties": {
+                "platformFaultDomainCount": 2,
+                "platformUpdateDomainCount": 10
+            }
+        }
+    ],
+    "outputs": {}
+}

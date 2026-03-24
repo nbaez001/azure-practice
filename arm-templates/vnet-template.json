@@ -21,7 +21,7 @@
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
-                        "[concat('10', copyIndex(), '.0.0/16')]"
+                        "[concat('10.', copyIndex(), '.0.0/16')]"
                     ]
                 },
                 "copy": [
