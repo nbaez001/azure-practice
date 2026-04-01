@@ -1,0 +1,26 @@
+{
+    "properties": {
+        "roleName": "Custom Besoft Exporter",
+        "description": "",
+        "isCustom": true,
+        "assignableScopes": [
+            "/subscriptions/da4ab1cb-4078-47f5-9a9a-61e892269446/resourceGroups/rg-dev-01",
+            "/subscriptions/da4ab1cb-4078-47f5-9a9a-61e892269446/resourceGroups/rg-dev-02"
+        ],
+        "permissions": [
+            {
+                "actions": [
+                    "Microsoft.Authorization/*",
+                    "Microsoft.Compute/disks/*/write",
+                    "Microsoft.Compute/snapshots/*/write",
+                    "Microsoft.Resources/subscriptions/resourceGroups/read"
+                ],
+                "notActions": [
+                    "Microsoft.Authorization/policyAssignments/*"
+                ],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ]
+    }
+}
